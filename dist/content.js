@@ -1,0 +1,1 @@
+(()=>{const t=document.head,n=Array.from(t.querySelectorAll("meta")).map((t=>({name:t.getAttribute("name"),content:t.getAttribute("content")}))),e=n.find((t=>"fb4s-listing-mls"===t.name)),i=n.find((t=>"fb4s-listing-id"===t.name)),l=e?e.content:null,s=i?i.content:null;chrome.runtime.sendMessage({listingMls:l,listingId:s})})();

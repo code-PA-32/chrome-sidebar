@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Find Businesses 4 Sale",
+  "description": "FB4S: Chrome Extension",
+  "version": "1.1.1",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "action": {
+    "default_icon": "icon.png",
+    "default_title": "FB4S: Chrome Extension",
+    "default_popup": "popup.html"
+  },
+  "side_panel": {
+    "default_path": "side-bar.html"
+  },
+  "permissions": [
+    "tabs",
+    "storage",
+    "sidePanel"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.findbusinesses4sale.com/listing/*",
+        "https://www.findbusinesses4sale.com/commercial-listing/*",
+        "https://findbusinessesforsale.pipedrive.com/deal/*",
+        "https://manojkukreja.followupboss.com/2/people/view/*",
+        "https://www.findbusinesses4sale.com/broker-dashboard/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
